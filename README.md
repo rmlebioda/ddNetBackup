@@ -31,6 +31,9 @@ Projects on hold (not finished):
 ## Tests
 Currently, library was only tested on Manjaro using ddNetBackupGuiGtk on KDE Plasma 5.23.1.
 
+## Licence
+This project is under MIT licence.
+
 ## Screenshots from GTK application
 ![GTK main screen image](./Images/GuiGtk_S1.png)
 ![GTK options image](./Images/GuiGtk_S2.png)
