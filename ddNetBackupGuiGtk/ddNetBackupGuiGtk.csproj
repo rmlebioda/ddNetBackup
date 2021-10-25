@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>ddNetBackupGuiGtk</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="**\*.glade" />
+    <EmbeddedResource Include="**\*.glade">
+      <LogicalName>%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\*.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GtkSharp" Version="3.24.24.*" />
+    <PackageReference Include="Mono.Posix.NETStandard" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ddNetBackupLib\ddNetBackupLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MainWindow.cs">
+      <DependentUpon>MainWindow.glade</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainWindowConstants.cs">
+      <DependentUpon>MainWindow.glade</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainWindowStack2.cs">
+      <DependentUpon>MainWindow.glade</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainWindowStack3.cs">
+      <DependentUpon>MainWindow.glade</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\..\..\..\..\..\..\usr\share\dotnet\shared\Microsoft.NETCore.App\5.0.8\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
